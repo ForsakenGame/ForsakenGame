@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player_AttackController : MonoBehaviour
 {
     #region Enums
-    private enum Directions { UP, DOWN, LEFT, RIGHT }
+    private enum Directions { UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3}
     private enum HeldItems { EMPTY = 0, SPEAR = 1, GUN = 2}
     #endregion
 
@@ -21,9 +21,6 @@ public class Player_AttackController : MonoBehaviour
     private Directions _facingDirection = Directions.RIGHT;
     private HeldItems _heldItem = HeldItems.EMPTY;
 
-    private readonly int _animStandingShootingRight = Animator.StringToHash("Anim_Player_StaticGun_Right");
-    private readonly int _animStandingShootingUp = Animator.StringToHash("Anim_Player_StaticGun_Up");
-    private readonly int _animStandingShootingDown = Animator.StringToHash("Anim_Player_StaticGun_Down");
     #endregion
 
     #region Animator Data
@@ -99,7 +96,6 @@ public class Player_AttackController : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
-
     }
     #endregion
 }
